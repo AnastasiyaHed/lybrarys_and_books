@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            {{ book.title }} by {{ book.author }} in {{ book.library.title }} - {{ book.price }}
+            <a href="{% url 'edit_book' book.id %}">Edit</a>
+            <a href="{% url 'delete_book' book.id %}">Delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Libraries</h1>
+    <ul>
+        {% for library in libraries %}
+            <li>{{ library.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Book Statistics</h2>
+    <p>Average Price: {{ avg_price|default:"N/A" }}</p>
+    <p>Minimum Price: {{ min_price|default:"N/A" }}</p>
+    <p>Maximum Price: {{ max_price|default:"N/A" }}</p>
+    <p>Total Books: {{ total_books|default:"N/A" }}</p>
+
+    <p><a href="{% url 'add_book' %}">Add a Book</a></p>
+</body>
+</html>
