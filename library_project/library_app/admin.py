@@ -17,3 +17,4 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Library, LibraryAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
+

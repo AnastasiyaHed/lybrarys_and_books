@@ -21,3 +21,4 @@ class Author(MediaResource):
 class Library(MediaResource):
     location = models.CharField(max_length=255, blank=True)
     established_date = models.DateField(null=True, blank=True)
+
